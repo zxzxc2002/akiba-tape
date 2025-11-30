@@ -29,7 +29,7 @@ const RetroScreen: React.FC<RetroScreenProps> = ({ content, trackNumber, page, o
       </div>
 
       {/* Main Content Area */}
-      <div className="flex-1 p-4 text-3xl leading-relaxed whitespace-pre-wrap relative z-20 font-medium overflow-y-auto">
+      <div className="flex-1 p-4 text-[28px] leading-relaxed whitespace-pre-wrap relative z-20 font-medium overflow-y-auto">
         {content.text[page]}
 
         <div className="mt-8 animate-pulse">_</div>

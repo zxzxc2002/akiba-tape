@@ -149,8 +149,8 @@ const App: React.FC = () => {
         {/* Split View Content (Top Half) - Only visible when playing */}
         {isLayoutSplit && (
           <div className="flex-1 flex flex-row h-full animate-fade-in z-10 bg-black/10 backdrop-blur-sm p-8 pb-32 gap-8 items-center justify-center">
-            {/* Left: Text Content (Expanded to fill - 60% width) */}
-            <div className="flex-[1.5] h-[90%] relative overflow-hidden rounded-lg bg-black/20 p-0 flex">
+            {/* Left: Text Content (Expanded to fill - more width) */}
+            <div className="flex-[2] h-[90%] relative overflow-hidden rounded-lg bg-black/20 p-0 flex">
               <RetroScreen
                 content={STORY_TEXTS[currentTrack]}
                 trackNumber={currentTrack}
@@ -159,8 +159,8 @@ const App: React.FC = () => {
               />
             </div>
 
-            {/* Right: Image Placeholder (Square - 40% width equivalent) */}
-            <div className="h-[90%] aspect-square flex-shrink-0 relative shadow-2xl rounded-lg overflow-hidden border-4 border-white/20 bg-black">
+            {/* Right: Image Placeholder (Square - reduced size) */}
+            <div className="h-[75%] aspect-square flex-shrink-0 relative shadow-2xl rounded-lg overflow-hidden border-4 border-white/20 bg-black">
               {!imageError ? (
                 <div className="w-full h-full overflow-hidden relative">
                   {/* Pixelation Trick: Render small, scale up */}
