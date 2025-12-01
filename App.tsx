@@ -160,7 +160,7 @@ const App: React.FC = () => {
             </div>
 
             {/* Right: Image Placeholder (Square - reduced size) */}
-            <div className="h-[75%] aspect-square flex-shrink-0 relative shadow-2xl rounded-lg overflow-hidden border-4 border-white/20 bg-black">
+            <div className="h-[90%] aspect-square flex-shrink-0 relative shadow-2xl rounded-lg overflow-hidden border-4 border-white/20 bg-black">
               {!imageError ? (
                 <div className="w-full h-full overflow-hidden relative">
                   {/* Pixelation Trick: Render small, scale up */}
