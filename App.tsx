@@ -136,6 +136,15 @@ const App: React.FC = () => {
     setImageError(false);
   }, [currentTrack, currentPage]);
 
+  // Preload next image
+  useEffect(() => {
+    const content = STORY_TEXTS[currentTrack];
+    if (content && currentPage < content.text.length - 1) {
+      const nextImage = new Image();
+      nextImage.src = `/image/${currentTrack}_${currentPage + 2}.png`;
+    }
+  }, [currentTrack, currentPage]);
+
   return (
     <div className="w-screen h-screen overflow-hidden relative flex flex-col">
       <BackgroundVideo />
