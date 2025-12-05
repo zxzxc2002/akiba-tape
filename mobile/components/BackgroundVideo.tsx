@@ -48,6 +48,7 @@ const BackgroundVideo: React.FC = () => {
                 loop
                 muted
                 playsInline
+                preload="auto"
                 style={{
                     width: '100%',
                     height: '100%',
@@ -55,10 +56,11 @@ const BackgroundVideo: React.FC = () => {
                     // Stronger blur + high contrast = "bleeding" pixel look
                     // Sepia + Hue Rotate = Old tape color grading
                     filter: 'blur(4px) contrast(1.4) brightness(0.9) sepia(0.4) saturate(1.5) hue-rotate(-10deg)',
-                    transform: 'rotate(90deg) scale(1.8)', // Rotate and scale to cover
+                    transform: 'scale(1.2)', // Scale 20% larger
+                    willChange: 'transform, filter', // Performance hint
                 }}
             >
-                <source src="/akiba_back.mp4" type="video/mp4" />
+                <source src="/akiba_back_mobile.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
 
