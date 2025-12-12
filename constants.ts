@@ -6,9 +6,9 @@ export const TOTAL_TRACKS = 12;
 // Asset Paths
 // Assuming files are uploaded to the project root
 export const ASSETS = {
-  diffuseMap: '/textures/boombox baked texture 3 final_1.png',
-  normalMap: '/textures/boombox baked Normals 3 final_0.png',
-  roughnessMap: '/textures/baked 2-boombox baked roughness 3 final_2@channels=B.png',
+  diffuseMap: '/textures/cassette_diffuse.png',
+  normalMap: '/textures/cassette_normal.png',
+  roughnessMap: '/textures/cassette_roughness.png',
   tapeLabel: '/akiba.png',
   audioFile: '/akiba_sound.mp3',
   modelFile: '/cassette_new.glb',
@@ -21,7 +21,7 @@ export const TRACK_CONFIGS: Record<number, AudioConfig> = {
   0: { playbackRate: 1.0, detune: 0, distortionLevel: 0, isNoise: false },
 
   // Track 1: Clean
-  1: { playbackRate: 0.97, detune: -10, distortionLevel: 0.1, isNoise: false, wobbleAmount: 0.02, ilterFrequency: 1000 },
+  1: { playbackRate: 0.97, detune: -10, distortionLevel: 0.1, isNoise: false, wobbleAmount: 0.02, filterFrequency: 1000 },
 
   // Track 2: Slight Tape Flutter (Wobble)
   2: { playbackRate: 1.0, detune: -5, distortionLevel: 0.005, isNoise: false, wobbleAmount: 0.002 },
@@ -55,6 +55,14 @@ export const TRACK_CONFIGS: Record<number, AudioConfig> = {
 };
 
 export const COSMIC_CONFIG: AudioConfig = { playbackRate: 1.0, detune: 0, distortionLevel: 0, isNoise: true };
+
+// About Modal Content
+export const ABOUT_CONTENT = {
+  title: "ABOUT PROJECT",
+  text: [
+    "인류가 정보를 남기기 시작한 이후부터, 이 세상에는 출처를 알 수 없는 정보의 파편들이 부유하고 있다. 특히 기술의 발달과 인터넷의 출현으로 정보 생산량은 기하급수적으로 증가되었고, 시간의 흐름과 데이터화 되는 과정을 거치며 많은 정보들은 정체 불명의 미지의 것이 되었다. 그 중에는 단순한 데이터의 손실을 넘어, 사용자들에게 아련한 향수와 불쾌한 공포를 동시에 불러일으키는 로스트 미디어(Lost Media)들이 존재한다. 그 중에서도 일명 아키하바라 테이프(Akihabara Tape), 혹은 아키바 테이프(Akiba Tape)로 불리는 카세트테이프는 지난 10년 이상 전 세계 인터넷 미스터리 커뮤니티를 매혹시켜 온 가장 대표적인 사례이다. 특히 이 테이프는 정체를 알 수 없는 노래, 로스트 웨이브(Lostwave)의 대표적인 사례로 유명하다. 로스트 웨이브 개념의 시작을 알렸던 노래, 일명 인터넷에서 가장 미스터리한 노래(The Most Mysterious Song on the Internet)가 밴드 FEX의 Subways of Your Mind로 밝혀지고(2024년), 대표적인 로스트 웨이브 'Everyone Knows That'이 Ulterior Motives(포르노 영화인 <Angels of Passion>의 OST)로 밝혀지고도, 1년이 넘게 지난 현재 시점(2025년 말)에서, 아키바 테이프의 담긴 하나의 노래의 출처는 여전히 풀리지 않은 최종 보스급의 미스터리로 남아 있다.\n\n아키하바라 테이프에 대해 더 자세히 알아보자면, 아키하바라 테이프(秋葉原 テープ)는 일본 도쿄의 오타쿠 성지 아키하바라와 관련된 수수께끼의 오디오 테이프 또는 카세트 테이프를 일컫는 이름이다. 20분 분량의 테이프에 삽입되어 3분 28초가량의 노래, 노래 가사의 일부를 따서 Fly away라고 불리기도 하는 이 곡은 2010년경 일본 커뮤니티 등지에 게시글을 작성한 최초 투고자에 의해 공개되었으며, 2019년 이후 로스트 웨이브 발굴이 유행하기 시작하며 다시 주목을 받았다. 아키바 테이프의 중요한 단서로는 테이프에 ARA라는 회사 로고가 검은 매직 펜으로 지워져 있었다는 점, 사용된 악기를 분석해본 결과 녹음된 시기가 1980년대 중후반으로 추정된다는 점, 테이프에 味の素ギフト(아지노모토 기프트)라는 이름이 적혀 있었다는 점이 있다. 이 테이프의 출처를 발굴하기 위한 노력의 결과로, 가장 유의미한 결과는 ARA라는 회사를 특정했다는 데 있다. 2025년 10월 경, ARA가 1969년부터 95년까지 CM송을 만들던 작은 회사였으며, 일본의 한 유튜버가 ARA의 대표 스기이 오사무의 친족과 접촉하였다는 것이다. 하지만 그들은 아키하바라 테이프에 관해 알고 있던 사실이 전혀 없었다.\n\n어쩌면 아키하바라 테이프의 정체는 영영 밝혀지지 않을지도 모른다. 혹은 이전 로스트 미디어 사례에서 나타났던 것처럼, 어느 순간에 갑작스럽게 출처가 밝혀질지도 모른다. 아직까지도 많은 부분이 미지의 영역에 놓인 아키하바라 테이프의 빈 공간을 사람들은 밝혀진 단서와 상상력을 바탕으로 메꾸고 있다. 그들은 정보를 사용하여 상상의 놀이를 즐기고 있는 것이다. 그렇다면, 정보를 어떻게 사용해야 할까? 아키하바라 테이프를 ‘절대 검색해서는 안 될 검색어’로 만들기, 자살한 일본의 가수와 연결하기, 고어 애니메이션으로 추정되며 정체를 알 수 없는 ‘사키 사노바시’와 연결하기 등, 미지의 영역을 어둡고 음침한 허구로 채우는 사람들이 있다. 또 다른 한편, 가사, 음색, 사운드, 테이프의 물리적인 성질에 주목하여 일종의 탐정과 같은 역할을 하며 어떻게 든 출처를 밝히려는 발굴자들도 있다. 혹은 제 3의 영역에서 끊임없는 잡설을 주장하고 있는 사람도 있다.\n\n이러한 정보의 재생산에 윤리적 잣대를 들이밀고 싶지 않다. 모든 재생산 활동을 로스트 미디어의 정체를 밝히고자 하는 활동이라고 주장하고 싶다. 결국 로스트 미디어를 발굴하기 위한 가장 기본 조건은 정보를 널리 퍼뜨리는 것이다. 허구와 사실의 구분은 중요하지 않다. 언제든 허구는 사실이 될 수 있고, 사실도 허구가 될 수 있기 때문이다. 본 작업은 결국 아키하바라 테이프라는 로스트 미디어의 정체를 밝히고자 하는 활동 중 하나이다. 다만 생성형 AI를 사용하여, 기존 단서와 정보, 그리고 상상력을 기반으로 10개의 허구의 이야기를 만들었다는 점이 특징이다. AI에게 윤리적 잣대, 그리고 진실의 중요성은 중요하지 않다. 그저 정보를 기반으로 하여 새로운 정보를 생산할 뿐이다. 그리고 그 정보에는 허구와 진실이 비결정적 상태에서 공존한다. 이 작업에서 만들어진 이야기가 관찰자에 의해, 시간에 흐름에 의해 어느 순간 진실과 허구 중 하나의 상태로 결정되길 바란다."
+  ]
+};
 
 // 90s PC Communication Style Text
 export const STORY_TEXTS: Record<number, StoryContent> = {
@@ -426,3 +434,4 @@ export const STORY_TEXTS: Record<number, StoryContent> = {
     ]
   }
 };
+

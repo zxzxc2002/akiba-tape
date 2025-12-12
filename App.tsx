@@ -10,6 +10,8 @@ import BackgroundVideo from './components/BackgroundVideo';
 import OrbitingTapes from './components/OrbitingTapes';
 import GlitchOverlay from './components/GlitchOverlay';
 import PlayerControls from './components/PlayerControls';
+import AboutModal from './components/AboutModal';
+import MiniCassette from './components/MiniCassette';
 import { audioService } from './services/audioService';
 import { STORY_TEXTS, TRACK_CONFIGS, TOTAL_TRACKS, ASSETS, COSMIC_CONFIG } from './constants';
 import { PlayerState } from './types';
@@ -34,6 +36,7 @@ const App: React.FC = () => {
   const [isTapeInserted, setIsTapeInserted] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isCosmicMode, setIsCosmicMode] = useState(false);
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
 
   const [currentPage, setCurrentPage] = useState<number>(0);
 
@@ -98,12 +101,17 @@ const App: React.FC = () => {
     if (!isTapeInserted) return;
 
     setIsCosmicMode(false); // Exit cosmic mode
-    setCurrentTrack(0); // Reset to Track 0
+
+    // Go to previous track, or restart if at 0
+    const prevTrack = currentTrack > 0 ? currentTrack - 1 : 0;
+
+    setCurrentTrack(prevTrack);
     setCurrentPage(0); // Reset page
 
-    // Set to PAUSED so the text/image UI remains visible
-    setPlayerState(PlayerState.PAUSED);
-    audioService.stop(); // Stop audio (effectively paused at start)
+    // Always play when rewinding
+    setPlayerState(PlayerState.PLAYING);
+    const config = TRACK_CONFIGS[prevTrack];
+    audioService.playTrack(config);
   };
 
   const handleInsertTape = () => {
@@ -151,6 +159,10 @@ const App: React.FC = () => {
       <GlitchOverlay />
       {/* VHS Transition Overlay */}
       {isTransitioning && <VHSOverlay />}
+
+      {/* About Section */}
+      <MiniCassette onClick={() => setIsAboutOpen(true)} />
+      <AboutModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} />
 
       {/* Main Content Area */}
       <div className={`flex-1 flex flex-col transition-all duration-1000 ease-in-out ${isLayoutSplit ? 'h-full' : 'h-full'}`}>
